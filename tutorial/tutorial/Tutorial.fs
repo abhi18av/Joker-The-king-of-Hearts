@@ -534,7 +534,8 @@ module PatternMatching =
     /// A record for a person's first and last name
 
     type Person =   
-          House  : string }
+        { First : string
+          Last  : string }
 
 
     /// Define a discriminated union of 3 different kinds of employees
