@@ -711,13 +711,3 @@ module OData =
 
     ()
 
- 
-#if COMPILED
-
-module BoilerPlateForForm =
-    [<System.STAThread>]
-    do ()
-//    do System.Windows.Forms.Application.Run()
-
-#endif
-
