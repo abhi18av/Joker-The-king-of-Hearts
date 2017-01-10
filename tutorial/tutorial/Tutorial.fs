@@ -127,7 +127,7 @@ module StringManipulation =
     printfn "%s" helloWorld
 
     /// A string formed by taking the first 7 characters of one of the result strings
-    let substring = helloWorld.[0..6]
+    let substring = helloWorld.[0 .. 6]
 
     printfn "%s" substring
 
@@ -145,9 +145,9 @@ module Tuples =
     /// A function that swaps the order of two values in a tuple.
     /// QuickInfo shows that the function is inferred to have a generic type.
 
-    let swapElems (a, b) = (b, a)
+    let swapHouses (a, b) = (b, a)
 
-    printfn "The result of swapping (1, 2) is %A" (swapElems (1,2))
+    printfn """The result of swapping ("Hearts", "Spades") is %A""" (swapHouses ("Hearts","Spades"))
 
     /// A tuple consisting of an integer, a string, and a double-precision floating point number
     let tuple2 = (1, "fred", 3.1415)
