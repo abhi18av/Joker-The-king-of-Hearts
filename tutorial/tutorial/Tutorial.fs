@@ -364,13 +364,13 @@ module Sequences =
 
     let rec randomWalk x =
         seq { yield x
-              yield! randomWalk (x + rnd.NextDouble() - 0.5) }
- 
+              yield! randomWalk (x + rnd.NextDouble()) }
 
     let first100ValuesOfRandomWalk =
         randomWalk 5.0
         |> Seq.truncate 100
         |> Seq.toList
+        |> Seq.map (fun x -> int(x))
 
 
 // ---------------------------------------------------------------
@@ -434,7 +434,7 @@ module RecordTypes =
 
     /// Converts a 'ContactCard' object to a string
     let showCard c =
-        c.Name + " Phone: " + c.House + (if not c. then " (unverified)" else "")
+        c.Name + " Phone: " + c.House + (if not c.Hidden then " (unverified)" else "")
 
        
 // ---------------------------------------------------------------
