@@ -419,22 +419,22 @@ module RecursiveFunctions  =
 
 module RecordTypes =
     // define a record type
-    type ContactCard =
+    type HouseOfCard =
         { Name     : string
-          Phone    : string
-          Verified : bool }
+          House    : string
+          Hidden : bool }
 
-    let contact1 = { Name = "Alf" ; Phone = "(206) 555-0157" ; Verified = false }
+    let card1 = { Name = "Alf" ; House = "Spades" ; Hidden = false }
 
     // Create a new record that is a copy of contact1,
     // but has different values for the 'Phone' and 'Verified' fields
 
-    let contact2 = { contact1 with Phone = "(206) 555-0112"; Verified = true }
+    let card2 = { card1 with House = "Clubs"; Hidden = true }
 
 
     /// Converts a 'ContactCard' object to a string
     let showCard c =
-        c.Name + " Phone: " + c.Phone + (if not c.Verified then " (unverified)" else "")
+        c.Name + " Phone: " + c.House + (if not c. then " (unverified)" else "")
 
        
 // ---------------------------------------------------------------
