@@ -54,7 +54,7 @@ module Integers =
  
 
  
-    let validCardNumbers = [ for c in 2 .. 9 -> c ]
+    let validCardNumbers = [ for c in 2 .. 10 -> c ]
  
  
  
@@ -67,12 +67,7 @@ module BasicFunctions =
     let func' (x,y) = x + y            
 
 
-    /// Apply the function, naming the function return result using 'let'.
-    /// The variable type is inferred from the function return type.
-    let result1 = func1 4573
-
-    printfn "The result of squaring the integer 4573 and adding 3 is %d" result1
-
+  
     // When needed, annotate the type of a parameter name using '(argument:type)'
     let func2 (x:int) = 2*x*x - x/5 + 3
 
