@@ -117,7 +117,7 @@ module StringManipulation =
 
     /// Use @ to create a verbatim string literal
 
-    let string3 = @"c:\Program Files\"
+    let string3 = @"~/Projects"
 
     /// Using a triple-quote string literal
     let string4 = """He said "hello world" after you did"""
@@ -533,37 +533,37 @@ module PatternMatching =
 
     /// A record for a person's first and last name
 
-    type Person =   
-        { First : string
-          Last  : string }
+    type Card =   
+        { House : string
+          Name  : string }
 
 
     /// Define a discriminated union of 3 different kinds of employees
 
-    type Employee =
+    type ACard =
         /// Engineer is just herself
-        | Engineer  of Person
+        | A  of Card
         /// Manager has list of reports
-        | Manager   of Person * list<Employee>            
+        | B   of Card * list<ACard>            
         /// Executive also has an assistant
-        | Executive of Person * list<Employee> * Employee 
+        | C of Card * list<ACard> * ACard 
 
     /// Count everyone underneath the employee in the management hierarchy, including the employee
-    let rec countReports(emp : Employee) =
-        1 + match emp with
-            | Engineer(id) ->
+    let rec countReports(crd : ACard) =
+        1 + match crd with
+            | A(id) ->
                 0
-            | Manager(id, reports) ->
+            | B(id, reports) ->
                 reports |> List.sumBy countReports
-            | Executive(id, reports, assistant) ->
+            | C(id, reports, assistant) ->
                 (reports |> List.sumBy countReports) + countReports assistant
 
     /// Find all managers/executives named "Dave" who do not have any reports
-    let rec findDaveWithOpenPosition(emps : Employee list) =
-        emps
+    let rec findHouseWithOpenPosition(crds : ACard list) =
+        crds
         |> List.filter(function
-                       | Manager({First = "Dave"}, []) -> true       // [] matches the empty list
-                       | Executive({First = "Dave"}, [], _) -> true
+                       | B({House = "Clubs"}, []) -> true       // [] matches the empty list
+                       | C({House = "Spades"}, [], _) -> true
                        | _ -> false)                                 // '_' is a wildcard pattern that matches anything
                                                                      // this handles the "or else" case
 
