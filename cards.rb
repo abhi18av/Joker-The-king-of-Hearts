@@ -1,5 +1,9 @@
-name = {:a => "a",
-         :b => "b"}
+# Here we model the world of Cards
+# There are four clans
 
-puts name[:a]
-puts "has been added"
+# FireHeart dragons RedMountains
+# WallBuilders dwarves BloodyPlains
+# Dark Elves of BklackForest 
+# HearthKeepers Humans of GreyValley
+
+puts "hello world"
