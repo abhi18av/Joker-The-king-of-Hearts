@@ -90,15 +90,12 @@ module ClanFireHearts =
 // ---------------------------------------------------------------
 
 
-module SomeBooleanValues =
+module commongMisconceptionsAboutFireHearts =
 
-    let boolean1 = true
+    let haveSharpTeeth = true
 
-    let boolean2 = false
+    let breatheColdBreathe = false
 
-    let boolean3 = not boolean1 && (boolean2 || false)
-
-    printfn "The expression 'not boolean1 && (boolean2 || false)' is %A" boolean3
 
  
 
@@ -109,7 +106,7 @@ module SomeBooleanValues =
 
 module StringManipulation =
 
-    let string1 = "Hello"
+    let string1 = "I'm Thorus, King of FireHearts"
 
     let string2  = "world"
 
