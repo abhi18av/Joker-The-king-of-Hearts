@@ -6,4 +6,19 @@
 # Dark Elves of BklackForest 
 # HearthKeepers Humans of GreyValley
 
-puts "hello world"
+class Dragon
+
+end
+
+class Dwarves
+
+end
+
+class Elves
+
+end
+
+class Humans
+
+  
+end
