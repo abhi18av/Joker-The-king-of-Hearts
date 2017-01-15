@@ -42,15 +42,13 @@
 //    - Units of measure       
 //    - Parallel array programming
 //    - Using events
-//    - Database access using type providers
-//    - OData access using type providers
- 
+
 
 // ---------------------------------------------------------------
 //         Integers and basic functions
 // ---------------------------------------------------------------
 
-module Integers =
+module CompleteCardHouse =
  
 
  
@@ -58,18 +56,18 @@ module Integers =
  
  
  
-module BasicFunctions =
+module ClanFireHearts =
 
     // Use 'let' to define a function that accepts an integer argument and returns an integer.
-    let func1 x = x*x + 3            
+    let roar = "!!! Rrrrrr !!!"            
 
     // Parenthesis are optional for function arguments
-    let func' (x,y) = x + y            
+    let dragonFood x y = printfn "Dragons eat %s and %s " x y       
 
 
   
     // When needed, annotate the type of a parameter name using '(argument:type)'
-    let func2 (x:int) = 2*x*x - x/5 + 3
+    let wiseDragons (x:int) = 2*x*x - x/5 
 
     let result2 = func2 (7 + 4)
 
