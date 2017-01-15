@@ -500,24 +500,24 @@ module OptionTypes =
     /// They are used extensively in F# code to represent the cases where many other
     /// languages would use null references.
 
-    type Customer = { zipCode : decimal option }
+    type Dragon = { eyeColor : decimal option }
 
     /// Abstract class that computes the shipping zone for the customer's zip code,
     /// given implementations for the 'GetState' and 'GetShippingZone' abstract methods.
 
     [<AbstractClass>]
 
-    type ShippingCalculator =
+    type EyeColorAndAge =
 
-        abstract GetState : decimal -> string option
+        abstract GetColor : decimal -> string option
 
-        abstract GetShippingZone : string -> int
+        abstract GetWingLength : string -> int
 
         /// Return the shipping zone corresponding to the customer's ZIP code
         /// Customer may not yet have a ZIP code or the ZIP code may be invalid
-        member this.CustomerShippingZone(customer : Customer) =
+        member this.IsExtremelyWise(dragon : Dragon) =
 
-            customer.zipCode |> Option.bind this.GetState |> Option.map this.GetShippingZone
+         dragon.eyeColor |> Option.bind this.GetColor |> Option.map this.GetWingLength
 
  
 // ---------------------------------------------------------------
